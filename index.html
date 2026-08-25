@@ -1,1 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorveteria Coltelli - Cardápio & Pedidos via WhatsApp</title>
+  
+  <!-- CSS Embutido Completo (Sem dependências externas) -->
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #faf7f2;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Topbar Notification */
+    .topbar {
+      background-color: #e63946;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Header & Navigation */
+    .header {
+      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      color: #e63946;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-weight: 600;
+      font-size: 15px;
+      color: #4a4a4a;
+    }
+
+    .nav-links a:hover {
+      color: #e63946;
+      transition: color 0.2s ease;
+    }
+
+    .btn-header-wa {
+      background-color: #25D366;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-header-wa:hover {
+      background-color: #1da851;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #fdf0d5 0%, #fff5ea 50%, #ffe3e3 100%);
+      padding: 60px 20px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1 1 500px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: rgba(230, 57, 70, 0.1);
+      color: #e63946;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: #1d3557;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: #25D366;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: #555555;
+      margin-bottom: 30px;
+    }
+
+    .btn-hero {
+      background-color: #e63946;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 16px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-hero:hover {
+      background-color: #c1121f;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Cardápio Section */
+    .menu-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      color: #666666;
+      font-size: 16px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      height: 220px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .product-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image-wrap img {
+      transform: scale(1.05);
+    }
+
+    .product-price {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #1d3557;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .product-desc {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .btn-wa-card {
+      background-color: #25D366;
+      color: #ffffff;
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-wa-card:hover {
+      background-color: #1da851;
+    }
+
+    /* Franqueado Banner */
+    .franchise-section {
+      background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+      color: #ffffff;
+      padding: 70px 20px;
+    }
+
+    .franchise-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .franchise-info {
+      flex: 1 1 500px;
+    }
+
+    .franchise-info h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .franchise-info p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .franchise-list {
+      list-style: none;
+    }
+
+    .franchise-list li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .franchise-form {
+      flex: 1 1 380px;
+      background-color: #ffffff;
+      color: #2b2b2b;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .franchise-form h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #1d3557;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #4a4a4a;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #e63946;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #e63946;
+      color: #ffffff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #c1121f;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1a1a1a;
+      color: #a0a0a0;
+      padding: 50px 20px 20px;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .footer-logo {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid #333333;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* Media Queries Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .section-title {
+        font-size: 26px;
+      }
+      .franchise-info h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE AVISO TOPO -->
+  <div class="topbar">
+    🍦 Faça seu pedido direto pelo WhatsApp: <strong>(41) 98419-1494</strong>
+  </div>
+
+  <!-- CABEÇALHO / NAVEGAÇÃO -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        <span>🍧 COLTELLI</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#seja-franqueado">Seja um Franqueado</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20e%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli!" target="_blank" class="btn-header-wa">
+        💬 Peça no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- SEÇÃO HERO / APRESENTAÇÃO -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">🚀 Entrega Rápida & Pedido Fácil</span>
+        <h1 class="hero-title">
+          Escolha seu sabor favorito e peça pelo <span>WhatsApp</span>!
+        </h1>
+        <p class="hero-subtitle">
+          Confira abaixo nosso cardápio completo com 10 opções artesanais deliciosas. Clique no botão de qualquer produto para abrir seu WhatsApp com o pedido já pronto para envio para o número <strong>(41) 98419-1494</strong>.
+        </p>
+        <a href="#cardapio" class="btn-hero">Ver Cardápio de Produtos ↓</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80" alt="Sorvete Coltelli">
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DO CARDÁPIO DE PRODUTOS (10 ITENS FICTÍCIOS) -->
+  <section id="cardapio" class="menu-section">
+    <div class="section-header">
+      <h2 class="section-title">Nosso Cardápio Selecionado</h2>
+      <p class="section-desc">Clique no botão verde para enviar seu pedido direto pelo WhatsApp!</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Produto 1 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Pote Gelato Ninho com Nutella">
+          <span class="product-price">R$ 38,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">1. Pote Gelato Ninho com Nutella (1L)</h3>
+            <p class="product-desc">Cremoso gelato sabor leite Ninho mesclado com generosas camadas de Nutella pura.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Pote%20Gelato%20Ninho%20com%20Nutella%20%281L%29%20%28R%24%2038%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80" alt="Pote Sorvete Pistache Premium">
+          <span class="product-price">R$ 45,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">2. Pote Sorvete Pistache Premium (1L)</h3>
+            <p class="product-desc">Elaborado com pasta 100% pura de pistache italiano e pedaços crocantes de pistache.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Pote%20Sorvete%20Pistache%20Premium%20%281L%29%20%28R%24%2045%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Pique-Nique de Morango">
+          <span class="product-price">R$ 32,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">3. Sorvete Morango com Leite Condensado (2L)</h3>
+            <p class="product-desc">Sorvete tradicional de morango natural recheado com calda cremosa de leite condensado.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Morango%20com%20Leite%20Condensado%20%282L%29%20%28R%24%2032%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80" alt="Picolé Gourmet Brownie">
+          <span class="product-price">R$ 12,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">4. Picolé Gourmet Brownie & Doce de Leite</h3>
+            <p class="product-desc">Picolé cremoso recheado com pedaços artesanais de brownie e doce de leite caseiro.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Picol%C3%A9%20Gourmet%20Brownie%20%26%20Doce%20de%20Leite%20%28R%24%2012%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=600&q=80" alt="Paleta Mexicana Maracujá">
+          <span class="product-price">R$ 14,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">5. Paleta Mexicana Maracujá com Leite Condensado</h3>
+            <p class="product-desc">Azedinho refrescante da fruta do maracujá com recheio cremoso e bem doce.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Paleta%20Mexicana%20Maracuj%C3%A1%20com%20Leite%20Condensado%20%28R%24%2014%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 6 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80" alt="Sorvete Zero Açúcar">
+          <span class="product-price">R$ 28,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">6. Sorvete Zero Açúcar - Chocolate Belga (500ml)</h3>
+            <p class="product-desc">Sabor intenso de cacau 70%, sem adição de açúcares. Perfeito para dietas restritivas.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Zero%20A%C3%A7%C3%BAcar%20-%20Chocolate%20Belga%20%28500ml%29%20%28R%24%2028%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 7 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=600&q=80" alt="Sorvete Vegano Coco Açaí">
+          <span class="product-price">R$ 26,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">7. Sorvete Vegano de Coco com Açaí (500ml)</h3>
+            <p class="product-desc">Base de leite de coco com mesclas puras de açaí orgânico, 100% livre de lactose.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Vegano%20de%20Coco%20com%20A%C3%A7a%C3%AD%20%28500ml%29%20%28R%24%2026%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 8 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Milkshake Ovomaltine">
+          <span class="product-price">R$ 22,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">8. Milkshake Coltelli Ovomaltine (500ml)</h3>
+            <p class="product-desc">Preparo super cremoso batido na hora com muito crocante de Ovomaltine.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Milkshake%20Coltelli%20Ovomaltine%20%28500ml%29%20%28R%24%2022%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 9 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Sundae Especial Macadâmia">
+          <span class="product-price">R$ 24,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">9. Sundae Doce de Leite com Macadâmia</h3>
+            <p class="product-desc">Taça com 3 bolas de sorvete, calda de doce de leite e nozes macadâmia caramelizadas.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sundae%20Doce%20de%20Leite%20com%20Macad%C3%A2mia%20%28R%24%2024%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Produto 10 -->
+      <div class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Caixa Família Picolés">
+          <span class="product-price">R$ 55,00</span>
+        </div>
+        <div class="product-body">
+          <div>
+            <h3 class="product-title">10. Caixa Família Picolés Variados (12 Unid.)</h3>
+            <p class="product-desc">Seleção especial dos 12 picolés mais vendidos da casa para toda a família.</p>
+          </div>
+          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Caixa%20Fam%C3%ADlia%20Picol%C3%A9s%20Variados%20%2812%20Unid.%29%20%28R%24%2055%2C00%29" target="_blank" class="btn-wa-card">
+            💬 Pedir este no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO SEJA UM FRANQUEADO -->
+  <section id="seja-franqueado" class="franchise-section">
+    <div class="franchise-container">
+      <div class="franchise-info">
+        <h2>Seja um Franqueado Sorveteria Coltelli</h2>
+        <p>Invista em um modelo de negócio consolidado, lucrativo e com constante crescimento no segmento de sorvetes e gelatos.</p>
+        <ul class="franchise-list">
+          <li>✔ Alta margem de rentabilidade e suporte completo de gestão</li>
+          <li>✔ Marca forte e reconhecida no mercado de sobremesas</li>
+          <li>✔ Treinamento de equipe e produtos de altíssima qualidade</li>
+        </ul>
+      </div>
+
+      <div class="franchise-form">
+        <h3>Interesse na Franquia</h3>
+        <form onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! Entraremos em contato.');">
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Digite seu nome" required>
+          </div>
+          <div class="form-group">
+            <label>Telefone / WhatsApp</label>
+            <input type="tel" placeholder="(41) 90000-0000" required>
+          </div>
+          <div class="form-group">
+            <label>Sua Cidade / Estado</label>
+            <input type="text" placeholder="Ex: Curitiba - PR" required>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Solicitação</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ DE CONTATO -->
+  <footer id="contato" class="footer">
+    <div class="footer-container">
+      <div>
+        <div class="footer-logo">🍧 COLTELLI</div>
+        <p>Levando o melhor sabor e qualidade em sorvetes para você e sua família.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento & Pedidos</h4>
+        <p><strong>WhatsApp:</strong> (41) 98419-1494</p>
+        <p>Atendimento diário: 11h às 22h</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <p><a href="https://wa.me/5541984191494" target="_blank">📱 WhatsApp Comercial</a></p>
+        <p>📸 Instagram: @sorveteriacoltelli</p>
+        <p>📘 Facebook: Sorveteria Coltelli</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Sorveteria Coltelli. Todos os direitos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>
