@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
     content="Site demonstrativo de sorveteria desenvolvido pela IG Sites."
   >
 
-  <title>Sorveteria Demo — Cardápio</title>
+  <title>Sorveteria Demo — Gelatos e Sorvetes</title>
 
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
 
     * {
       box-sizing: border-box;
@@ -29,150 +19,81 @@
       padding: 0;
     }
 
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
     body {
-      font-family:
-        'Segoe UI',
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #faf7f2;
       color: #2b2b2b;
       line-height: 1.6;
     }
-
 
     a {
       text-decoration: none;
       color: inherit;
     }
 
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-
-    /* =========================
-       TOPO
-    ========================= */
+    /* TOPO */
 
     .topbar {
-
       background-color: #e63946;
-
       color: #ffffff;
-
       text-align: center;
-
       padding: 10px 15px;
-
       font-size: 14px;
-
       font-weight: 600;
-
-      box-shadow:
-        0 2px 4px rgba(0,0,0,0.1);
-
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-
-    /* =========================
-       HEADER
-    ========================= */
+    /* HEADER */
 
     .header {
-
       background-color: #ffffff;
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
-      box-shadow:
-        0 2px 10px rgba(0,0,0,0.05);
-
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
-
     .header-container {
-
       max-width: 1200px;
-
       margin: 0 auto;
-
       padding: 15px 20px;
 
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
 
       gap: 20px;
-
     }
 
-
     .logo {
-
-      font-size: 26px;
-
+      font-size: 25px;
       font-weight: 900;
-
       color: #e63946;
 
       display: flex;
-
       align-items: center;
-
       gap: 8px;
 
       letter-spacing: 1px;
-
-      white-space: nowrap;
-
     }
 
-
     .nav-links {
-
       display: flex;
-
       gap: 25px;
 
       font-weight: 600;
-
       font-size: 15px;
 
       color: #4a4a4a;
-
     }
-
 
     .nav-links a:hover {
-
       color: #e63946;
-
       transition: color 0.2s ease;
-
     }
 
-
     .btn-header-wa {
-
       background-color: #25D366;
-
       color: #ffffff;
 
       padding: 10px 20px;
@@ -180,228 +101,162 @@
       border-radius: 50px;
 
       font-weight: 700;
-
       font-size: 14px;
 
       display: inline-flex;
-
       align-items: center;
-
       gap: 8px;
 
-      box-shadow:
-        0 4px 10px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 4px 10px rgba(37,211,102,0.3);
 
       transition: all 0.3s ease;
-
-      white-space: nowrap;
-
     }
-
 
     .btn-header-wa:hover {
-
       background-color: #1da851;
-
       transform: translateY(-2px);
-
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
-
       background:
         linear-gradient(
           135deg,
-          #fdf0d5 0%,
-          #fff5ea 50%,
-          #ffe3e3 100%
+          #fff4d8 0%,
+          #fff1e6 50%,
+          #ffe5e8 100%
         );
 
-      padding: 60px 20px;
-
+      padding: 65px 20px;
     }
 
-
     .hero-container {
-
       max-width: 1200px;
-
       margin: 0 auto;
 
       display: flex;
-
       flex-wrap: wrap;
 
       align-items: center;
-
       justify-content: space-between;
 
-      gap: 40px;
-
+      gap: 45px;
     }
-
 
     .hero-content {
-
       flex: 1 1 500px;
-
     }
 
-
     .hero-tag {
-
       display: inline-block;
 
-      background-color:
-        rgba(230, 57, 70, 0.1);
+      background-color: rgba(230,57,70,0.10);
 
       color: #e63946;
 
       font-size: 13px;
-
       font-weight: 700;
 
-      padding: 6px 16px;
+      padding: 7px 17px;
 
       border-radius: 20px;
 
-      margin-bottom: 15px;
-
+      margin-bottom: 17px;
     }
 
-
     .hero-title {
-
-      font-size: 42px;
-
+      font-size: 44px;
       font-weight: 800;
 
       color: #1d3557;
 
-      line-height: 1.2;
+      line-height: 1.18;
 
       margin-bottom: 20px;
-
     }
-
 
     .hero-title span {
-
       color: #25D366;
-
     }
 
-
     .hero-subtitle {
-
-      font-size: 16px;
+      font-size: 17px;
 
       color: #555555;
 
-      margin-bottom: 30px;
-
       max-width: 650px;
 
+      margin-bottom: 30px;
     }
 
-
     .btn-hero {
-
       background-color: #e63946;
 
       color: #ffffff;
 
-      padding: 14px 28px;
+      padding: 15px 29px;
 
       border-radius: 30px;
 
       font-weight: 700;
-
       font-size: 16px;
 
       display: inline-block;
 
-      box-shadow:
-        0 4px 15px rgba(230, 57, 70, 0.3);
+      box-shadow: 0 4px 15px rgba(230,57,70,0.3);
 
-      transition:
-        background-color 0.3s ease,
-        transform 0.2s ease;
-
+      transition: all 0.3s ease;
     }
-
 
     .btn-hero:hover {
-
       background-color: #c1121f;
-
       transform: translateY(-2px);
-
     }
 
+    /* FOTO DA CAPA */
 
     .hero-image {
-
-      flex: 1 1 350px;
+      flex: 1 1 420px;
 
       display: flex;
-
       justify-content: center;
-
     }
 
-
     .hero-image img {
-
-      width: 320px;
-
-      height: 320px;
-
-      border-radius: 50%;
+      width: 100%;
+      max-width: 470px;
+      height: 360px;
 
       object-fit: cover;
 
-      object-position: center;
+      border-radius: 28px;
 
-      border: 8px solid #ffffff;
+      border: 7px solid #ffffff;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.18);
+        0 18px 40px rgba(0,0,0,0.18);
 
+      display: block;
     }
 
-
-    /* =========================
-       CARDÁPIO
-    ========================= */
+    /* CARDÁPIO */
 
     .menu-section {
-
       max-width: 1200px;
 
       margin: 0 auto;
 
       padding: 80px 20px;
-
     }
 
-
     .section-header {
-
       text-align: center;
 
       margin-bottom: 50px;
-
     }
 
-
     .section-title {
-
       font-size: 34px;
 
       font-weight: 800;
@@ -409,37 +264,26 @@
       color: #1d3557;
 
       margin-bottom: 10px;
-
     }
 
-
     .section-desc {
-
       color: #666666;
 
       font-size: 16px;
-
     }
 
-
-    /* =========================
-       PRODUTOS
-    ========================= */
+    /* PRODUTOS */
 
     .product-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(auto-fill, minmax(320px, 1fr));
 
       gap: 30px;
-
     }
 
-
     .product-card {
-
       background-color: #ffffff;
 
       border-radius: 16px;
@@ -458,22 +302,16 @@
         box-shadow 0.3s ease;
 
       border: 1px solid #f0f0f0;
-
     }
 
-
     .product-card:hover {
-
       transform: translateY(-5px);
 
       box-shadow:
         0 10px 25px rgba(0,0,0,0.12);
-
     }
 
-
     .product-image-wrap {
-
       position: relative;
 
       height: 220px;
@@ -481,38 +319,27 @@
       width: 100%;
 
       overflow: hidden;
-
     }
 
-
     .product-image-wrap img {
-
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
 
       transition:
         transform 0.5s ease;
-
     }
-
 
     .product-card:hover
     .product-image-wrap img {
-
       transform: scale(1.05);
-
     }
 
-
     .product-price {
-
       position: absolute;
 
       top: 15px;
-
       right: 15px;
 
       background-color: #1d3557;
@@ -529,12 +356,9 @@
 
       box-shadow:
         0 2px 8px rgba(0,0,0,0.2);
-
     }
 
-
     .product-body {
-
       padding: 24px;
 
       display: flex;
@@ -544,12 +368,9 @@
       flex-grow: 1;
 
       justify-content: space-between;
-
     }
 
-
     .product-title {
-
       font-size: 18px;
 
       font-weight: 700;
@@ -557,12 +378,9 @@
       color: #1d3557;
 
       margin-bottom: 10px;
-
     }
 
-
     .product-desc {
-
       font-size: 14px;
 
       color: #666666;
@@ -570,12 +388,11 @@
       margin-bottom: 20px;
 
       line-height: 1.5;
-
     }
 
+    /* BOTÃO PEDIR */
 
     .btn-wa-card {
-
       background-color: #25D366;
 
       color: #ffffff;
@@ -601,30 +418,22 @@
       gap: 8px;
 
       box-shadow:
-        0 4px 10px rgba(37, 211, 102, 0.2);
+        0 4px 10px rgba(37,211,102,0.2);
 
       transition:
         background-color 0.2s ease,
         transform 0.2s ease;
-
     }
 
-
     .btn-wa-card:hover {
-
       background-color: #1da851;
 
       transform: translateY(-2px);
-
     }
 
+    /* FRANQUIA */
 
-    /* =========================
-       CHAMADA PARA O PORTFÓLIO
-    ========================= */
-
-    .demo-section {
-
+    .franchise-section {
       background:
         linear-gradient(
           135deg,
@@ -635,82 +444,146 @@
       color: #ffffff;
 
       padding: 70px 20px;
-
     }
 
-
-    .demo-container {
-
-      max-width: 1000px;
+    .franchise-container {
+      max-width: 1200px;
 
       margin: 0 auto;
 
-      text-align: center;
+      display: flex;
 
+      flex-wrap: wrap;
+
+      align-items: center;
+
+      gap: 50px;
     }
 
+    .franchise-info {
+      flex: 1 1 500px;
+    }
 
-    .demo-container h2 {
-
+    .franchise-info h2 {
       font-size: 36px;
 
       font-weight: 800;
 
       margin-bottom: 15px;
-
     }
 
+    .franchise-info p {
+      font-size: 16px;
 
-    .demo-container p {
+      opacity: 0.9;
 
-      max-width: 700px;
-
-      margin: 0 auto 28px;
-
-      font-size: 17px;
-
-      opacity: 0.95;
-
+      margin-bottom: 25px;
     }
 
-
-    .demo-button {
-
-      display: inline-block;
-
-      background: #ffffff;
-
-      color: #e63946;
-
-      padding: 14px 28px;
-
-      border-radius: 30px;
-
-      font-weight: 800;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-
+    .franchise-list {
+      list-style: none;
     }
 
+    .franchise-list li {
+      margin-bottom: 12px;
 
-    .demo-button:hover {
+      font-size: 15px;
 
-      transform: translateY(-2px);
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+    .franchise-form {
+      flex: 1 1 380px;
+
+      background-color: #ffffff;
+
+      color: #2b2b2b;
+
+      padding: 30px;
+
+      border-radius: 16px;
 
       box-shadow:
-        0 8px 20px rgba(0,0,0,0.2);
-
+        0 10px 30px rgba(0,0,0,0.2);
     }
 
+    .franchise-form h3 {
+      font-size: 22px;
 
-    /* =========================
-       RODAPÉ
-    ========================= */
+      font-weight: 700;
+
+      margin-bottom: 20px;
+
+      text-align: center;
+
+      color: #1d3557;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      margin-bottom: 5px;
+
+      color: #4a4a4a;
+    }
+
+    .form-group input {
+      width: 100%;
+
+      padding: 12px;
+
+      border: 1px solid #dddddd;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #e63946;
+    }
+
+    .btn-submit {
+      width: 100%;
+
+      background-color: #e63946;
+
+      color: #ffffff;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-weight: 700;
+
+      font-size: 15px;
+
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background-color: #c1121f;
+    }
+
+    /* FOOTER */
 
     .footer {
-
       background-color: #1a1a1a;
 
       color: #a0a0a0;
@@ -718,15 +591,12 @@
       padding: 50px 20px 20px;
 
       font-size: 14px;
-
     }
 
-
     .footer-container {
-
       max-width: 1200px;
 
-      margin: 0 auto;
+      margin: 0 auto 40px;
 
       display: grid;
 
@@ -734,14 +604,9 @@
         repeat(auto-fit, minmax(250px, 1fr));
 
       gap: 40px;
-
-      margin-bottom: 40px;
-
     }
 
-
     .footer-col h4 {
-
       color: #ffffff;
 
       font-size: 16px;
@@ -749,12 +614,9 @@
       font-weight: 700;
 
       margin-bottom: 15px;
-
     }
 
-
     .footer-logo {
-
       color: #ffffff;
 
       font-size: 22px;
@@ -764,12 +626,9 @@
       margin-bottom: 10px;
 
       display: inline-block;
-
     }
 
-
     .footer-bottom {
-
       max-width: 1200px;
 
       margin: 0 auto;
@@ -781,101 +640,18 @@
       text-align: center;
 
       font-size: 12px;
-
     }
 
+    /* RESPONSIVO */
 
-    /* =========================
-       BOTÃO FLUTUANTE
-    ========================= */
-
-    .floating-wa {
-
-      position: fixed;
-
-      right: 20px;
-
-      bottom: 20px;
-
-      background-color: #25D366;
-
-      color: #ffffff;
-
-      padding: 14px 20px;
-
-      border-radius: 50px;
-
-      font-weight: 800;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.2);
-
-      z-index: 2000;
-
-      transition:
-        transform 0.2s ease,
-        background-color 0.2s ease;
-
-    }
-
-
-    .floating-wa:hover {
-
-      background-color: #1da851;
-
-      transform: translateY(-3px);
-
-    }
-
-
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
 
       .nav-links {
         display: none;
       }
 
-      .header-container {
-        justify-content: space-between;
-      }
-
-      .hero-container {
-        text-align: center;
-      }
-
-      .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-subtitle {
-        max-width: 600px;
-      }
-
-    }
-
-
-    @media (max-width: 768px) {
-
-      .topbar {
-        font-size: 13px;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .btn-header-wa {
-        padding: 9px 13px;
-        font-size: 12px;
-      }
-
       .hero {
-        padding: 45px 18px;
+        padding: 45px 20px;
       }
 
       .hero-title {
@@ -887,15 +663,14 @@
       }
 
       .hero-image img {
-        width: 270px;
-        height: 270px;
-      }
-
-      .menu-section {
-        padding: 60px 18px;
+        height: 280px;
       }
 
       .section-title {
+        font-size: 27px;
+      }
+
+      .franchise-info h2 {
         font-size: 28px;
       }
 
@@ -903,79 +678,25 @@
         grid-template-columns: 1fr;
       }
 
-      .demo-container h2 {
-        font-size: 28px;
-      }
-
-      .floating-wa {
-        right: 12px;
-        bottom: 12px;
-        padding: 13px 17px;
-        font-size: 13px;
-      }
-
-    }
-
-
-    @media (max-width: 480px) {
-
-      .header-container {
-        padding: 12px 14px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .btn-header-wa {
-        font-size: 11px;
-        padding: 8px 11px;
-      }
-
-      .hero-title {
-        font-size: 28px;
-      }
-
-      .hero-image img {
-        width: 230px;
-        height: 230px;
-      }
-
-      .product-image-wrap {
-        height: 200px;
-      }
-
-      .floating-wa {
-        left: 12px;
-        right: 12px;
-        text-align: center;
-      }
-
     }
 
   </style>
-
 </head>
-
 
 <body>
 
 
-  <!-- =========================
-       BARRA SUPERIOR
-  ========================== -->
+  <!-- BARRA SUPERIOR -->
 
   <div class="topbar">
 
-    🍦 Peça pelo WhatsApp:
+    🍦 Faça seu pedido direto pelo WhatsApp:
     <strong>(41) 99522-9213</strong>
 
   </div>
 
 
-  <!-- =========================
-       CABEÇALHO
-  ========================== -->
+  <!-- CABEÇALHO -->
 
   <header class="header">
 
@@ -990,33 +711,25 @@
 
       <nav class="nav-links">
 
-        <a href="#home">
-          Início
-        </a>
+        <a href="#home">Início</a>
 
-        <a href="#cardapio">
-          Cardápio
-        </a>
+        <a href="#cardapio">Cardápio</a>
 
-        <a href="#sobre">
-          Sobre
-        </a>
+        <a href="#sobre">Sobre</a>
 
-        <a href="#contato">
-          Contato
-        </a>
+        <a href="#contato">Contato</a>
 
       </nav>
 
 
       <a
-        href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+        href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
         target="_blank"
         rel="noopener noreferrer"
         class="btn-header-wa"
       >
 
-        💬 Quero um site como este
+        💬 Fale pelo WhatsApp
 
       </a>
 
@@ -1025,44 +738,36 @@
   </header>
 
 
-  <!-- =========================
-       CAPA
-  ========================== -->
+  <!-- HERO -->
 
-  <section
-    id="home"
-    class="hero"
-  >
+  <section id="home" class="hero">
 
     <div class="hero-container">
 
 
       <div class="hero-content">
 
-
         <span class="hero-tag">
 
-          🍦 Sorveteria • Sabores especiais
+          🍨 Sorvetes • Gelatos • Sobremesas
 
         </span>
 
 
         <h1 class="hero-title">
 
-          O sabor que combina com o seu momento.
-          Peça pelo
-          <span>WhatsApp!</span>
+          O sabor que deixa seu dia
+          <span>mais gostoso!</span>
 
         </h1>
 
 
         <p class="hero-subtitle">
 
-          Descubra nossos sorvetes, picolés,
-          milk-shakes e sobremesas.
-          Escolha seu sabor favorito e faça seu
-          pedido de forma rápida e fácil pelo
-          WhatsApp.
+          Escolha seu sabor favorito,
+          descubra nossas opções de sorvetes,
+          gelatos e sobremesas e faça seu pedido
+          de forma rápida e fácil pelo WhatsApp.
 
         </p>
 
@@ -1072,38 +777,35 @@
           class="btn-hero"
         >
 
-          Ver Cardápio de Produtos ↓
+          Ver Cardápio de Sorvetes ↓
 
         </a>
 
-
       </div>
 
+
+      <!-- FOTO DA CAPA -->
 
       <div class="hero-image">
 
         <img
-          src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Sorvetes e sobremesas"
+          src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1000&q=85"
+          alt="Sorvetes e gelatos"
         >
 
       </div>
-
 
     </div>
 
   </section>
 
 
-  <!-- =========================
-       CARDÁPIO
-  ========================== -->
+  <!-- CARDÁPIO -->
 
   <section
     id="cardapio"
     class="menu-section"
   >
-
 
     <div class="section-header">
 
@@ -1116,8 +818,8 @@
 
       <p class="section-desc">
 
-        Escolha seu sabor favorito e peça
-        diretamente pelo WhatsApp.
+        Escolha seu sabor favorito e clique em
+        <strong>Pedir</strong> para falar pelo WhatsApp.
 
       </p>
 
@@ -1134,8 +836,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=800&q=80"
-            alt="Gelato de leite Ninho com chocolate"
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=700&q=85"
+            alt="Gelato de Ninho com Chocolate"
           >
 
           <span class="product-price">
@@ -1150,31 +852,26 @@
           <div>
 
             <h3 class="product-title">
-
               1. Gelato Ninho com Chocolate
-
             </h3>
 
-
             <p class="product-desc">
-
               Gelato cremoso de leite Ninho
               com uma deliciosa cobertura
               de chocolate.
-
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Gelato%20Ninho%20com%20Chocolate."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1190,8 +887,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=800&q=80"
-            alt="Sorvete de pistache"
+            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=700&q=85"
+            alt="Pistache Premium"
           >
 
           <span class="product-price">
@@ -1206,30 +903,25 @@
           <div>
 
             <h3 class="product-title">
-
               2. Pistache Premium
-
             </h3>
 
-
             <p class="product-desc">
-
               Sorvete cremoso de pistache
               com pedaços crocantes.
-
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Pistache%20Premium."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1245,8 +937,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
-            alt="Sorvete de morango"
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=85"
+            alt="Morango com Leite Condensado"
           >
 
           <span class="product-price">
@@ -1261,30 +953,25 @@
           <div>
 
             <h3 class="product-title">
-
               3. Morango com Leite Condensado
-
             </h3>
 
-
             <p class="product-desc">
-
               Sorvete de morango com
               calda cremosa de leite condensado.
-
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Morango%20com%20Leite%20Condensado."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1300,8 +987,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=800&q=80"
-            alt="Picolé gourmet"
+            src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=700&q=85"
+            alt="Picolé Gourmet"
           >
 
           <span class="product-price">
@@ -1316,30 +1003,25 @@
           <div>
 
             <h3 class="product-title">
-
               4. Picolé Gourmet
-
             </h3>
 
-
             <p class="product-desc">
-
-              Picolé cremoso com cobertura
-              especial e recheio delicioso.
-
+              Picolé cremoso com sabores
+              especiais e recheios deliciosos.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Picol%C3%A9%20Gourmet."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1355,8 +1037,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=800&q=80"
-            alt="Paleta de maracujá"
+            src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=700&q=85"
+            alt="Paleta de Maracujá"
           >
 
           <span class="product-price">
@@ -1371,30 +1053,25 @@
           <div>
 
             <h3 class="product-title">
-
               5. Paleta de Maracujá
-
             </h3>
 
-
             <p class="product-desc">
-
-              Paleta refrescante de maracujá
+              Refrescante sabor de maracujá
               com recheio cremoso.
-
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Paleta%20de%20Maracuj%C3%A1."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1410,8 +1087,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=800&q=80"
-            alt="Sorvete de chocolate"
+            src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=700&q=85"
+            alt="Sorvete de Chocolate"
           >
 
           <span class="product-price">
@@ -1426,30 +1103,25 @@
           <div>
 
             <h3 class="product-title">
-
               6. Chocolate Belga
-
             </h3>
 
-
             <p class="product-desc">
-
-              Chocolate intenso e cremoso
-              para quem ama sabores marcantes.
-
+              Sabor intenso de chocolate
+              para os apaixonados por cacau.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Chocolate%20Belga."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1465,8 +1137,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=800&q=80"
-            alt="Sorvete de coco com açaí"
+            src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=700&q=85"
+            alt="Sorvete de Coco com Açaí"
           >
 
           <span class="product-price">
@@ -1481,30 +1153,25 @@
           <div>
 
             <h3 class="product-title">
-
               7. Coco com Açaí
-
             </h3>
 
-
             <p class="product-desc">
-
-              Combinação refrescante de
-              coco cremoso com açaí.
-
+              Combinação refrescante de coco
+              cremoso com açaí.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Coco%20com%20A%C3%A7a%C3%AD."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1520,8 +1187,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
-            alt="Milk-shake de chocolate"
+            src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=85"
+            alt="Milkshake"
           >
 
           <span class="product-price">
@@ -1536,30 +1203,25 @@
           <div>
 
             <h3 class="product-title">
-
-              8. Milk-shake Cremoso
-
+              8. Milkshake Cremoso
             </h3>
 
-
             <p class="product-desc">
-
-              Milk-shake preparado na hora,
-              cremoso e cheio de sabor.
-
+              Milkshake super cremoso
+              preparado na hora.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Milkshake%20Cremoso."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1575,8 +1237,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
-            alt="Sundae de doce de leite"
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=85"
+            alt="Sundae"
           >
 
           <span class="product-price">
@@ -1591,30 +1253,25 @@
           <div>
 
             <h3 class="product-title">
-
               9. Sundae Especial
-
             </h3>
 
-
             <p class="product-desc">
-
-              Sorvete cremoso acompanhado
-              de calda e complementos especiais.
-
+              Sorvete cremoso com calda
+              e complementos especiais.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Sundae%20Especial."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1630,8 +1287,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=800&q=80"
-            alt="Caixa de picolés variados"
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=700&q=85"
+            alt="Caixa de Picolés"
           >
 
           <span class="product-price">
@@ -1646,30 +1303,25 @@
           <div>
 
             <h3 class="product-title">
-
-              10. Caixa de Picolés Variados
-
+              10. Caixa Família de Picolés
             </h3>
 
-
             <p class="product-desc">
-
-              Seleção de picolés variados
-              para compartilhar com toda a família.
-
+              Seleção de sabores variados
+              para compartilhar com a família.
             </p>
 
           </div>
 
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20o%20site%20demonstrativo%20e%20quero%20pedir%3A%20Caixa%20Fam%C3%ADlia%20de%20Picol%C3%A9s."
             target="_blank"
             rel="noopener noreferrer"
             class="btn-wa-card"
           >
 
-            💬 Quero um site como este
+            💬 Pedir
 
           </a>
 
@@ -1683,53 +1335,110 @@
   </section>
 
 
-  <!-- =========================
-       SOBRE / DEMONSTRAÇÃO
-  ========================== -->
+  <!-- SOBRE -->
 
   <section
     id="sobre"
-    class="demo-section"
+    class="franchise-section"
   >
 
-    <div class="demo-container">
+    <div class="franchise-container">
 
-      <h2>
+      <div class="franchise-info">
 
-        Tenha um site assim para sua sorveteria
+        <h2>
+          Uma experiência deliciosa em cada sabor
+        </h2>
 
-      </h2>
+        <p>
+          Uma sorveteria moderna precisa de um site
+          bonito, rápido e fácil de usar. Aqui o cliente
+          consegue conhecer os produtos e entrar em
+          contato pelo WhatsApp em poucos segundos.
+        </p>
+
+        <ul class="franchise-list">
+
+          <li>
+            ✔ Cardápio organizado
+          </li>
+
+          <li>
+            ✔ Fotos dos produtos
+          </li>
+
+          <li>
+            ✔ Pedidos pelo WhatsApp
+          </li>
+
+          <li>
+            ✔ Site adaptado para celular
+          </li>
+
+        </ul>
+
+      </div>
 
 
-      <p>
+      <div class="franchise-form">
 
-        Este é um site demonstrativo criado para
-        mostrar como uma sorveteria pode apresentar
-        seus produtos, cardápio, informações e
-        atendimento de forma profissional.
+        <h3>
+          Quer um site assim?
+        </h3>
 
-      </p>
+        <form
+          onsubmit="event.preventDefault(); window.open('https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este.','_blank');"
+        >
+
+          <div class="form-group">
+
+            <label>
+              Seu nome
+            </label>
+
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              required
+            >
+
+          </div>
 
 
-      <a
-        href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="demo-button"
-      >
+          <div class="form-group">
 
-        💬 Quero um site como este
+            <label>
+              Seu negócio
+            </label>
 
-      </a>
+            <input
+              type="text"
+              placeholder="Nome da sua empresa"
+              required
+            >
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="btn-submit"
+          >
+
+            Quero meu site
+
+          </button>
+
+        </form>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- =========================
-       RODAPÉ
-  ========================== -->
+  <!-- RODAPÉ -->
 
   <footer
     id="contato"
@@ -1743,16 +1452,14 @@
 
         <div class="footer-logo">
 
-          🍦 Sorveteria Demo
+          🍦 SORVETERIA DEMO
 
         </div>
 
-
         <p>
-
-          Site demonstrativo desenvolvido
-          pela IG Sites.
-
+          Um exemplo de site moderno para
+          sorveterias, gelaterias e negócios
+          de sobremesas.
         </p>
 
       </div>
@@ -1761,27 +1468,14 @@
       <div class="footer-col">
 
         <h4>
-
-          Atendimento
-
+          Pedidos
         </h4>
 
-
         <p>
-
           <strong>
             WhatsApp:
           </strong>
-
           (41) 99522-9213
-
-        </p>
-
-
-        <p>
-
-          Atendimento pelo WhatsApp
-
         </p>
 
       </div>
@@ -1790,28 +1484,22 @@
       <div class="footer-col">
 
         <h4>
-
           IG Sites
-
         </h4>
 
-
         <p>
-
           UM SITE COM A CARA DO SEU NEGÓCIO
-
         </p>
 
-
-        <p style="margin-top: 10px;">
+        <p style="margin-top:10px;">
 
           <a
-            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            href="https://wa.me/5541995229213?text=Ol%C3%A1!%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
             target="_blank"
             rel="noopener noreferrer"
           >
 
-            📱 (41) 99522-9213
+            📱 Falar pelo WhatsApp
 
           </a>
 
@@ -1825,30 +1513,13 @@
 
     <div class="footer-bottom">
 
-      © 2026 IG Sites.
-      Site demonstrativo.
+      © 2026 IG Sites —
+      Site demonstrativo
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       BOTÃO WHATSAPP
-  ========================== -->
-
-  <a
-    href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
-    target="_blank"
-    rel="noopener noreferrer"
-    class="floating-wa"
-  >
-
-    💬 Quero um site como este
-
-  </a>
-
-
 </body>
-
 </html>
