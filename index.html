@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorveteria Coltelli - Cardápio & Pedidos via WhatsApp</title>
-  
-  <!-- CSS Embutido Completo (Sem dependências externas) -->
+
+  <meta
+    name="description"
+    content="Site demonstrativo de sorveteria desenvolvido pela IG Sites."
+  >
+
+  <title>Sorveteria Demo - Cardápio</title>
+
   <style>
-    /* Reset & Base Styles */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -26,7 +31,6 @@
       color: inherit;
     }
 
-    /* Topbar Notification */
     .topbar {
       background-color: #e63946;
       color: #ffffff;
@@ -37,7 +41,6 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Header & Navigation */
     .header {
       background-color: #ffffff;
       position: sticky;
@@ -53,6 +56,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
     }
 
     .logo {
@@ -63,6 +67,7 @@
       align-items: center;
       gap: 8px;
       letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -90,6 +95,7 @@
       gap: 8px;
       box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
       transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     .btn-header-wa:hover {
@@ -97,9 +103,14 @@
       transform: translateY(-2px);
     }
 
-    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #fdf0d5 0%, #fff5ea 50%, #ffe3e3 100%);
+      background: linear-gradient(
+        135deg,
+        #fdf0d5 0%,
+        #fff5ea 50%,
+        #ffe3e3 100%
+      );
+
       padding: 60px 20px;
     }
 
@@ -177,7 +188,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
-    /* Cardápio Section */
     .menu-section {
       max-width: 1200px;
       margin: 0 auto;
@@ -201,7 +211,6 @@
       font-size: 16px;
     }
 
-    /* Product Grid */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -298,9 +307,13 @@
       background-color: #1da851;
     }
 
-    /* Franqueado Banner */
     .franchise-section {
-      background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+      background: linear-gradient(
+        135deg,
+        #e63946 0%,
+        #c1121f 100%
+      );
+
       color: #ffffff;
       padding: 70px 20px;
     }
@@ -386,7 +399,7 @@
 
     .btn-submit {
       width: 100%;
-      background-color: #e63946;
+      background-color: #25D366;
       color: #ffffff;
       padding: 14px;
       border: none;
@@ -394,14 +407,15 @@
       font-weight: 700;
       font-size: 15px;
       cursor: pointer;
+      display: block;
+      text-align: center;
       transition: background-color 0.2s ease;
     }
 
     .btn-submit:hover {
-      background-color: #c1121f;
+      background-color: #1da851;
     }
 
-    /* Footer */
     .footer {
       background-color: #1a1a1a;
       color: #a0a0a0;
@@ -442,311 +456,869 @@
       font-size: 12px;
     }
 
-    /* Media Queries Responsive */
     @media (max-width: 768px) {
+
       .nav-links {
         display: none;
       }
+
       .hero-title {
         font-size: 30px;
       }
+
       .section-title {
         font-size: 26px;
       }
+
       .franchise-info h2 {
         font-size: 28px;
       }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-container {
+        flex-wrap: wrap;
+      }
+
     }
+
   </style>
 </head>
+
+
 <body>
 
-  <!-- BARRA DE AVISO TOPO -->
+
+  <!-- =========================
+       TOPO
+  ========================== -->
+
   <div class="topbar">
-    🍦 Faça seu pedido direto pelo WhatsApp: <strong>(41) 98419-1494</strong>
+
+    🍦 Site demonstrativo desenvolvido pela
+    <strong>IG Sites</strong>
+
   </div>
 
-  <!-- CABEÇALHO / NAVEGAÇÃO -->
+
+  <!-- =========================
+       CABEÇALHO
+  ========================== -->
+
   <header class="header">
+
     <div class="header-container">
-      <a href="#" class="logo">
-        <span>🍧 COLTELLI</span>
+
+      <a href="#home" class="logo">
+
+        🍧 SORVETERIA DEMO
+
       </a>
+
 
       <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#cardapio">Cardápio</a>
-        <a href="#seja-franqueado">Seja um Franqueado</a>
-        <a href="#contato">Contato</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#cardapio">
+          Cardápio
+        </a>
+
+        <a href="#contato">
+          Contato
+        </a>
+
       </nav>
 
-      <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20e%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli!" target="_blank" class="btn-header-wa">
-        💬 Peça no WhatsApp
+
+      <a
+        href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-header-wa"
+      >
+
+        💬 Quero um site como este
+
       </a>
+
     </div>
+
   </header>
 
-  <!-- SEÇÃO HERO / APRESENTAÇÃO -->
-  <section id="home" class="hero">
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section
+    id="home"
+    class="hero"
+  >
+
     <div class="hero-container">
+
+
       <div class="hero-content">
-        <span class="hero-tag">🚀 Entrega Rápida & Pedido Fácil</span>
+
+        <span class="hero-tag">
+
+          🚀 Demonstração de site
+
+        </span>
+
+
         <h1 class="hero-title">
-          Escolha seu sabor favorito e peça pelo <span>WhatsApp</span>!
+
+          Escolha seu sabor favorito e
+          conheça este exemplo de site
+          para <span>WhatsApp</span>!
+
         </h1>
+
+
         <p class="hero-subtitle">
-          Confira abaixo nosso cardápio completo com 10 opções artesanais deliciosas. Clique no botão de qualquer produto para abrir seu WhatsApp com o pedido já pronto para envio para o número <strong>(41) 98419-1494</strong>.
+
+          Um exemplo de site moderno para
+          apresentar produtos, cardápio,
+          informações e contato de forma
+          profissional e fácil de usar.
+
         </p>
-        <a href="#cardapio" class="btn-hero">Ver Cardápio de Produtos ↓</a>
+
+
+        <a
+          href="#cardapio"
+          class="btn-hero"
+        >
+
+          Ver Cardápio de Produtos ↓
+
+        </a>
+
       </div>
+
+
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80" alt="Sorvete Coltelli">
+
+        <img
+          src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80"
+          alt="Sorvete"
+        >
+
       </div>
+
+
     </div>
+
   </section>
 
-  <!-- SEÇÃO DO CARDÁPIO DE PRODUTOS (10 ITENS FICTÍCIOS) -->
-  <section id="cardapio" class="menu-section">
+
+  <!-- =========================
+       CARDÁPIO
+  ========================== -->
+
+  <section
+    id="cardapio"
+    class="menu-section"
+  >
+
     <div class="section-header">
-      <h2 class="section-title">Nosso Cardápio Selecionado</h2>
-      <p class="section-desc">Clique no botão verde para enviar seu pedido direto pelo WhatsApp!</p>
+
+      <h2 class="section-title">
+
+        Cardápio Demonstrativo
+
+      </h2>
+
+
+      <p class="section-desc">
+
+        Clique em qualquer botão para
+        conhecer o contato da IG Sites.
+
+      </p>
+
     </div>
+
 
     <div class="product-grid">
 
-      <!-- Produto 1 -->
+
+      <!-- PRODUTO 1 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Pote Gelato Ninho com Nutella">
-          <span class="product-price">R$ 38,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
+            alt="Gelato Ninho com Nutella"
+          >
+
+          <span class="product-price">
+            R$ 38,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">1. Pote Gelato Ninho com Nutella (1L)</h3>
-            <p class="product-desc">Cremoso gelato sabor leite Ninho mesclado com generosas camadas de Nutella pura.</p>
+
+            <h3 class="product-title">
+              1. Pote Gelato Ninho com Nutella (1L)
+            </h3>
+
+            <p class="product-desc">
+              Cremoso gelato sabor leite Ninho
+              mesclado com generosas camadas
+              de Nutella.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Pote%20Gelato%20Ninho%20com%20Nutella%20%281L%29%20%28R%24%2038%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 2 -->
+
+      <!-- PRODUTO 2 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80" alt="Pote Sorvete Pistache Premium">
-          <span class="product-price">R$ 45,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80"
+            alt="Sorvete de Pistache"
+          >
+
+          <span class="product-price">
+            R$ 45,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">2. Pote Sorvete Pistache Premium (1L)</h3>
-            <p class="product-desc">Elaborado com pasta 100% pura de pistache italiano e pedaços crocantes de pistache.</p>
+
+            <h3 class="product-title">
+              2. Pote Sorvete Pistache Premium (1L)
+            </h3>
+
+            <p class="product-desc">
+              Elaborado com pasta de pistache
+              e pedaços crocantes de pistache.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Pote%20Sorvete%20Pistache%20Premium%20%281L%29%20%28R%24%2045%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 3 -->
+
+      <!-- PRODUTO 3 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Pique-Nique de Morango">
-          <span class="product-price">R$ 32,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
+            alt="Sorvete de Morango"
+          >
+
+          <span class="product-price">
+            R$ 32,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">3. Sorvete Morango com Leite Condensado (2L)</h3>
-            <p class="product-desc">Sorvete tradicional de morango natural recheado com calda cremosa de leite condensado.</p>
+
+            <h3 class="product-title">
+              3. Sorvete Morango com Leite Condensado (2L)
+            </h3>
+
+            <p class="product-desc">
+              Sorvete tradicional de morango
+              com calda cremosa de leite condensado.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Morango%20com%20Leite%20Condensado%20%282L%29%20%28R%24%2032%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 4 -->
+
+      <!-- PRODUTO 4 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80" alt="Picolé Gourmet Brownie">
-          <span class="product-price">R$ 12,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80"
+            alt="Picolé Gourmet"
+          >
+
+          <span class="product-price">
+            R$ 12,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">4. Picolé Gourmet Brownie & Doce de Leite</h3>
-            <p class="product-desc">Picolé cremoso recheado com pedaços artesanais de brownie e doce de leite caseiro.</p>
+
+            <h3 class="product-title">
+              4. Picolé Gourmet Brownie & Doce de Leite
+            </h3>
+
+            <p class="product-desc">
+              Picolé cremoso recheado com
+              brownie e doce de leite.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Picol%C3%A9%20Gourmet%20Brownie%20%26%20Doce%20de%20Leite%20%28R%24%2012%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 5 -->
+
+      <!-- PRODUTO 5 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=600&q=80" alt="Paleta Mexicana Maracujá">
-          <span class="product-price">R$ 14,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=600&q=80"
+            alt="Paleta Mexicana"
+          >
+
+          <span class="product-price">
+            R$ 14,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">5. Paleta Mexicana Maracujá com Leite Condensado</h3>
-            <p class="product-desc">Azedinho refrescante da fruta do maracujá com recheio cremoso e bem doce.</p>
+
+            <h3 class="product-title">
+              5. Paleta Mexicana Maracujá com Leite Condensado
+            </h3>
+
+            <p class="product-desc">
+              Maracujá refrescante com recheio
+              cremoso de leite condensado.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Paleta%20Mexicana%20Maracuj%C3%A1%20com%20Leite%20Condensado%20%28R%24%2014%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 6 -->
+
+      <!-- PRODUTO 6 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80" alt="Sorvete Zero Açúcar">
-          <span class="product-price">R$ 28,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80"
+            alt="Sorvete de Chocolate"
+          >
+
+          <span class="product-price">
+            R$ 28,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">6. Sorvete Zero Açúcar - Chocolate Belga (500ml)</h3>
-            <p class="product-desc">Sabor intenso de cacau 70%, sem adição de açúcares. Perfeito para dietas restritivas.</p>
+
+            <h3 class="product-title">
+              6. Sorvete Zero Açúcar - Chocolate Belga
+            </h3>
+
+            <p class="product-desc">
+              Sabor intenso de chocolate
+              sem adição de açúcar.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Zero%20A%C3%A7%C3%BAcar%20-%20Chocolate%20Belga%20%28500ml%29%20%28R%24%2028%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 7 -->
+
+      <!-- PRODUTO 7 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=600&q=80" alt="Sorvete Vegano Coco Açaí">
-          <span class="product-price">R$ 26,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=600&q=80"
+            alt="Sorvete de Coco com Açaí"
+          >
+
+          <span class="product-price">
+            R$ 26,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">7. Sorvete Vegano de Coco com Açaí (500ml)</h3>
-            <p class="product-desc">Base de leite de coco com mesclas puras de açaí orgânico, 100% livre de lactose.</p>
+
+            <h3 class="product-title">
+              7. Sorvete Vegano de Coco com Açaí
+            </h3>
+
+            <p class="product-desc">
+              Base de leite de coco com
+              açaí e sem lactose.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sorvete%20Vegano%20de%20Coco%20com%20A%C3%A7a%C3%AD%20%28500ml%29%20%28R%24%2026%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 8 -->
+
+      <!-- PRODUTO 8 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Milkshake Ovomaltine">
-          <span class="product-price">R$ 22,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+            alt="Milkshake Ovomaltine"
+          >
+
+          <span class="product-price">
+            R$ 22,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">8. Milkshake Coltelli Ovomaltine (500ml)</h3>
-            <p class="product-desc">Preparo super cremoso batido na hora com muito crocante de Ovomaltine.</p>
+
+            <h3 class="product-title">
+              8. Milkshake Ovomaltine (500ml)
+            </h3>
+
+            <p class="product-desc">
+              Milkshake cremoso preparado
+              na hora com Ovomaltine.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Milkshake%20Coltelli%20Ovomaltine%20%28500ml%29%20%28R%24%2022%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 9 -->
+
+      <!-- PRODUTO 9 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Sundae Especial Macadâmia">
-          <span class="product-price">R$ 24,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
+            alt="Sundae"
+          >
+
+          <span class="product-price">
+            R$ 24,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">9. Sundae Doce de Leite com Macadâmia</h3>
-            <p class="product-desc">Taça com 3 bolas de sorvete, calda de doce de leite e nozes macadâmia caramelizadas.</p>
+
+            <h3 class="product-title">
+              9. Sundae Doce de Leite com Macadâmia
+            </h3>
+
+            <p class="product-desc">
+              Taça com sorvete, doce de leite
+              e macadâmia caramelizada.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Sundae%20Doce%20de%20Leite%20com%20Macad%C3%A2mia%20%28R%24%2024%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
 
-      <!-- Produto 10 -->
+
+      <!-- PRODUTO 10 -->
+
       <div class="product-card">
+
         <div class="product-image-wrap">
-          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Caixa Família Picolés">
-          <span class="product-price">R$ 55,00</span>
+
+          <img
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
+            alt="Caixa de Picolés"
+          >
+
+          <span class="product-price">
+            R$ 55,00
+          </span>
+
         </div>
+
+
         <div class="product-body">
+
           <div>
-            <h3 class="product-title">10. Caixa Família Picolés Variados (12 Unid.)</h3>
-            <p class="product-desc">Seleção especial dos 12 picolés mais vendidos da casa para toda a família.</p>
+
+            <h3 class="product-title">
+              10. Caixa Família Picolés Variados
+            </h3>
+
+            <p class="product-desc">
+              Seleção especial de picolés
+              para toda a família.
+            </p>
+
           </div>
-          <a href="https://wa.me/5541984191494?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Coltelli%3A%0A-%20Caixa%20Fam%C3%ADlia%20Picol%C3%A9s%20Variados%20%2812%20Unid.%29%20%28R%24%2055%2C00%29" target="_blank" class="btn-wa-card">
-            💬 Pedir este no WhatsApp
+
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-wa-card"
+          >
+
+            💬 Quero um site como este
+
           </a>
+
         </div>
+
       </div>
+
 
     </div>
+
   </section>
 
-  <!-- SEÇÃO SEJA UM FRANQUEADO -->
-  <section id="seja-franqueado" class="franchise-section">
+
+  <!-- =========================
+       CTA FINAL
+  ========================== -->
+
+  <section
+    id="contato"
+    class="franchise-section"
+  >
+
     <div class="franchise-container">
+
+
       <div class="franchise-info">
-        <h2>Seja um Franqueado Sorveteria Coltelli</h2>
-        <p>Invista em um modelo de negócio consolidado, lucrativo e com constante crescimento no segmento de sorvetes e gelatos.</p>
+
+        <h2>
+
+          Gostou deste site?
+
+        </h2>
+
+
+        <p>
+
+          A IG Sites cria sites personalizados
+          para empresas, com visual profissional,
+          versão para celular e botão direto
+          para WhatsApp.
+
+        </p>
+
+
         <ul class="franchise-list">
-          <li>✔ Alta margem de rentabilidade e suporte completo de gestão</li>
-          <li>✔ Marca forte e reconhecida no mercado de sobremesas</li>
-          <li>✔ Treinamento de equipe e produtos de altíssima qualidade</li>
+
+          <li>
+            ✔ Site profissional
+          </li>
+
+          <li>
+            ✔ Design responsivo para celular
+          </li>
+
+          <li>
+            ✔ Botão direto para WhatsApp
+          </li>
+
         </ul>
+
       </div>
+
 
       <div class="franchise-form">
-        <h3>Interesse na Franquia</h3>
-        <form onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! Entraremos em contato.');">
-          <div class="form-group">
-            <label>Nome Completo</label>
-            <input type="text" placeholder="Digite seu nome" required>
-          </div>
-          <div class="form-group">
-            <label>Telefone / WhatsApp</label>
-            <input type="tel" placeholder="(41) 90000-0000" required>
-          </div>
-          <div class="form-group">
-            <label>Sua Cidade / Estado</label>
-            <input type="text" placeholder="Ex: Curitiba - PR" required>
-          </div>
-          <button type="submit" class="btn-submit">Enviar Solicitação</button>
-        </form>
+
+        <h3>
+
+          Quero um site como este
+
+        </h3>
+
+
+        <a
+          href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-submit"
+        >
+
+          💬 Falar com a IG Sites
+
+        </a>
+
       </div>
+
+
     </div>
+
   </section>
 
-  <!-- RODAPÉ DE CONTATO -->
-  <footer id="contato" class="footer">
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+
+  <footer class="footer">
+
     <div class="footer-container">
+
+
       <div>
-        <div class="footer-logo">🍧 COLTELLI</div>
-        <p>Levando o melhor sabor e qualidade em sorvetes para você e sua família.</p>
+
+        <div class="footer-logo">
+
+          🍧 SORVETERIA DEMO
+
+        </div>
+
+
+        <p>
+
+          Um exemplo de site moderno para
+          apresentar produtos, informações
+          e contato de forma profissional.
+
+        </p>
+
       </div>
 
-      <div class="footer-col">
-        <h4>Atendimento & Pedidos</h4>
-        <p><strong>WhatsApp:</strong> (41) 98419-1494</p>
-        <p>Atendimento diário: 11h às 22h</p>
-      </div>
 
       <div class="footer-col">
-        <h4>Redes Sociais</h4>
-        <p><a href="https://wa.me/5541984191494" target="_blank">📱 WhatsApp Comercial</a></p>
-        <p>📸 Instagram: @sorveteriacoltelli</p>
-        <p>📘 Facebook: Sorveteria Coltelli</p>
+
+        <h4>
+
+          Sobre o projeto
+
+        </h4>
+
+
+        <p>
+
+          Site demonstrativo desenvolvido
+          pela IG Sites.
+
+        </p>
+
       </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+
+          Contato
+
+        </h4>
+
+
+        <p>
+
+          <a
+            href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            📱 (41) 99522-9213
+
+          </a>
+
+        </p>
+
+      </div>
+
+
     </div>
+
 
     <div class="footer-bottom">
-      &copy; 2026 Sorveteria Coltelli. Todos os direitos reservados.
+
+      © 2026 — IG Sites |
+      UM SITE COM A CARA DO SEU NEGÓCIO
+
     </div>
+
   </footer>
+
 
 </body>
 </html>
