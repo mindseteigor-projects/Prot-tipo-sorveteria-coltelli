@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="Site demonstrativo de sorveteria desenvolvido pela IG Sites."
   >
 
-  <title>Sorveteria Demo - Cardápio</title>
+  <title>Sorveteria Demo — Cardápio</title>
 
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       box-sizing: border-box;
@@ -19,458 +29,873 @@
       padding: 0;
     }
 
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family:
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       background-color: #faf7f2;
       color: #2b2b2b;
       line-height: 1.6;
     }
+
 
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    .topbar {
-      background-color: #e63946;
-      color: #ffffff;
-      text-align: center;
-      padding: 10px 15px;
-      font-size: 14px;
-      font-weight: 600;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    img {
+      max-width: 100%;
+      display: block;
     }
+
+
+    /* =========================
+       TOPO
+    ========================= */
+
+    .topbar {
+
+      background-color: #e63946;
+
+      color: #ffffff;
+
+      text-align: center;
+
+      padding: 10px 15px;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.1);
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
 
     .header {
+
       background-color: #ffffff;
+
       position: sticky;
+
       top: 0;
+
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+      box-shadow:
+        0 2px 10px rgba(0,0,0,0.05);
+
     }
+
 
     .header-container {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       padding: 15px 20px;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 20px;
+
     }
+
 
     .logo {
+
       font-size: 26px;
+
       font-weight: 900;
+
       color: #e63946;
+
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
       letter-spacing: 1px;
+
       white-space: nowrap;
+
     }
+
 
     .nav-links {
+
       display: flex;
+
       gap: 25px;
+
       font-weight: 600;
+
       font-size: 15px;
+
       color: #4a4a4a;
+
     }
+
 
     .nav-links a:hover {
+
       color: #e63946;
+
       transition: color 0.2s ease;
+
     }
+
 
     .btn-header-wa {
+
       background-color: #25D366;
+
       color: #ffffff;
+
       padding: 10px 20px;
+
       border-radius: 50px;
+
       font-weight: 700;
+
       font-size: 14px;
+
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
-      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+
+      box-shadow:
+        0 4px 10px rgba(37, 211, 102, 0.3);
+
       transition: all 0.3s ease;
+
       white-space: nowrap;
+
     }
+
 
     .btn-header-wa:hover {
+
       background-color: #1da851;
+
       transform: translateY(-2px);
+
     }
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      background: linear-gradient(
-        135deg,
-        #fdf0d5 0%,
-        #fff5ea 50%,
-        #ffe3e3 100%
-      );
+
+      background:
+        linear-gradient(
+          135deg,
+          #fdf0d5 0%,
+          #fff5ea 50%,
+          #ffe3e3 100%
+        );
 
       padding: 60px 20px;
+
     }
+
 
     .hero-container {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       display: flex;
+
       flex-wrap: wrap;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 40px;
+
     }
+
 
     .hero-content {
+
       flex: 1 1 500px;
+
     }
+
 
     .hero-tag {
+
       display: inline-block;
-      background-color: rgba(230, 57, 70, 0.1);
+
+      background-color:
+        rgba(230, 57, 70, 0.1);
+
       color: #e63946;
+
       font-size: 13px;
+
       font-weight: 700;
+
       padding: 6px 16px;
+
       border-radius: 20px;
+
       margin-bottom: 15px;
+
     }
+
 
     .hero-title {
+
       font-size: 42px;
+
       font-weight: 800;
+
       color: #1d3557;
+
       line-height: 1.2;
+
       margin-bottom: 20px;
+
     }
+
 
     .hero-title span {
+
       color: #25D366;
+
     }
+
 
     .hero-subtitle {
+
       font-size: 16px;
+
       color: #555555;
+
       margin-bottom: 30px;
+
+      max-width: 650px;
+
     }
+
 
     .btn-hero {
+
       background-color: #e63946;
+
       color: #ffffff;
+
       padding: 14px 28px;
+
       border-radius: 30px;
+
       font-weight: 700;
+
       font-size: 16px;
+
       display: inline-block;
-      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
-      transition: background-color 0.3s ease;
+
+      box-shadow:
+        0 4px 15px rgba(230, 57, 70, 0.3);
+
+      transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+
     }
+
 
     .btn-hero:hover {
+
       background-color: #c1121f;
+
+      transform: translateY(-2px);
+
     }
+
 
     .hero-image {
+
       flex: 1 1 350px;
+
       display: flex;
+
       justify-content: center;
+
     }
+
 
     .hero-image img {
+
       width: 320px;
+
       height: 320px;
+
       border-radius: 50%;
+
       object-fit: cover;
+
+      object-position: center;
+
       border: 8px solid #ffffff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.18);
+
     }
+
+
+    /* =========================
+       CARDÁPIO
+    ========================= */
 
     .menu-section {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       padding: 80px 20px;
+
     }
+
 
     .section-header {
+
       text-align: center;
+
       margin-bottom: 50px;
+
     }
+
 
     .section-title {
+
       font-size: 34px;
+
       font-weight: 800;
+
       color: #1d3557;
+
       margin-bottom: 10px;
+
     }
+
 
     .section-desc {
+
       color: #666666;
+
       font-size: 16px;
+
     }
+
+
+    /* =========================
+       PRODUTOS
+    ========================= */
 
     .product-grid {
+
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+      grid-template-columns:
+        repeat(auto-fill, minmax(320px, 1fr));
+
       gap: 30px;
+
     }
+
 
     .product-card {
+
       background-color: #ffffff;
+
       border-radius: 16px;
+
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+
+      box-shadow:
+        0 4px 20px rgba(0,0,0,0.06);
+
       display: flex;
+
       flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
       border: 1px solid #f0f0f0;
+
     }
+
 
     .product-card:hover {
+
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.12);
+
     }
+
 
     .product-image-wrap {
+
       position: relative;
+
       height: 220px;
+
       width: 100%;
+
       overflow: hidden;
+
     }
+
 
     .product-image-wrap img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
-      transition: transform 0.5s ease;
+
+      transition:
+        transform 0.5s ease;
+
     }
 
-    .product-card:hover .product-image-wrap img {
+
+    .product-card:hover
+    .product-image-wrap img {
+
       transform: scale(1.05);
+
     }
+
 
     .product-price {
+
       position: absolute;
+
       top: 15px;
+
       right: 15px;
+
       background-color: #1d3557;
+
       color: #ffffff;
+
       font-weight: 700;
+
       font-size: 14px;
+
       padding: 6px 14px;
+
       border-radius: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.2);
+
     }
+
 
     .product-body {
+
       padding: 24px;
+
       display: flex;
+
       flex-direction: column;
+
       flex-grow: 1;
+
       justify-content: space-between;
+
     }
+
 
     .product-title {
+
       font-size: 18px;
+
       font-weight: 700;
+
       color: #1d3557;
+
       margin-bottom: 10px;
+
     }
+
 
     .product-desc {
+
       font-size: 14px;
+
       color: #666666;
+
       margin-bottom: 20px;
+
       line-height: 1.5;
+
     }
+
 
     .btn-wa-card {
+
       background-color: #25D366;
+
       color: #ffffff;
+
       width: 100%;
+
       padding: 12px;
+
       border-radius: 10px;
+
       font-weight: 700;
+
       font-size: 14px;
+
       text-align: center;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 8px;
-      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
-      transition: background-color 0.2s ease;
+
+      box-shadow:
+        0 4px 10px rgba(37, 211, 102, 0.2);
+
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+
     }
+
 
     .btn-wa-card:hover {
+
       background-color: #1da851;
+
+      transform: translateY(-2px);
+
     }
 
-    .franchise-section {
-      background: linear-gradient(
-        135deg,
-        #e63946 0%,
-        #c1121f 100%
-      );
+
+    /* =========================
+       CHAMADA PARA O PORTFÓLIO
+    ========================= */
+
+    .demo-section {
+
+      background:
+        linear-gradient(
+          135deg,
+          #e63946 0%,
+          #c1121f 100%
+        );
 
       color: #ffffff;
+
       padding: 70px 20px;
+
     }
 
-    .franchise-container {
-      max-width: 1200px;
+
+    .demo-container {
+
+      max-width: 1000px;
+
       margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 50px;
+
+      text-align: center;
+
     }
 
-    .franchise-info {
-      flex: 1 1 500px;
-    }
 
-    .franchise-info h2 {
+    .demo-container h2 {
+
       font-size: 36px;
+
       font-weight: 800;
+
       margin-bottom: 15px;
+
     }
 
-    .franchise-info p {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 25px;
+
+    .demo-container p {
+
+      max-width: 700px;
+
+      margin: 0 auto 28px;
+
+      font-size: 17px;
+
+      opacity: 0.95;
+
     }
 
-    .franchise-list {
-      list-style: none;
+
+    .demo-button {
+
+      display: inline-block;
+
+      background: #ffffff;
+
+      color: #e63946;
+
+      padding: 14px 28px;
+
+      border-radius: 30px;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
     }
 
-    .franchise-list li {
-      margin-bottom: 12px;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+
+    .demo-button:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.2);
+
     }
 
-    .franchise-form {
-      flex: 1 1 380px;
-      background-color: #ffffff;
-      color: #2b2b2b;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
 
-    .franchise-form h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #1d3557;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #4a4a4a;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #dddddd;
-      border-radius: 8px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .form-group input:focus {
-      border-color: #e63946;
-    }
-
-    .btn-submit {
-      width: 100%;
-      background-color: #25D366;
-      color: #ffffff;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 15px;
-      cursor: pointer;
-      display: block;
-      text-align: center;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn-submit:hover {
-      background-color: #1da851;
-    }
+    /* =========================
+       RODAPÉ
+    ========================= */
 
     .footer {
+
       background-color: #1a1a1a;
+
       color: #a0a0a0;
+
       padding: 50px 20px 20px;
+
       font-size: 14px;
+
     }
+
 
     .footer-container {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
       gap: 40px;
+
       margin-bottom: 40px;
+
     }
+
 
     .footer-col h4 {
+
       color: #ffffff;
+
       font-size: 16px;
+
       font-weight: 700;
+
       margin-bottom: 15px;
+
     }
+
 
     .footer-logo {
+
       color: #ffffff;
+
       font-size: 22px;
+
       font-weight: 900;
+
       margin-bottom: 10px;
+
       display: inline-block;
+
     }
+
 
     .footer-bottom {
+
       max-width: 1200px;
+
       margin: 0 auto;
+
       border-top: 1px solid #333333;
+
       padding-top: 20px;
+
       text-align: center;
+
       font-size: 12px;
+
     }
 
-    @media (max-width: 768px) {
+
+    /* =========================
+       BOTÃO FLUTUANTE
+    ========================= */
+
+    .floating-wa {
+
+      position: fixed;
+
+      right: 20px;
+
+      bottom: 20px;
+
+      background-color: #25D366;
+
+      color: #ffffff;
+
+      padding: 14px 20px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.2);
+
+      z-index: 2000;
+
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+
+    }
+
+
+    .floating-wa:hover {
+
+      background-color: #1da851;
+
+      transform: translateY(-3px);
+
+    }
+
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 900px) {
 
       .nav-links {
         display: none;
       }
 
+      .header-container {
+        justify-content: space-between;
+      }
+
+      .hero-container {
+        text-align: center;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-subtitle {
+        max-width: 600px;
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+
+      .topbar {
+        font-size: 13px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .btn-header-wa {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 45px 18px;
+      }
+
       .hero-title {
-        font-size: 30px;
+        font-size: 31px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .hero-image img {
+        width: 270px;
+        height: 270px;
+      }
+
+      .menu-section {
+        padding: 60px 18px;
       }
 
       .section-title {
-        font-size: 26px;
-      }
-
-      .franchise-info h2 {
         font-size: 28px;
       }
 
@@ -478,13 +903,58 @@
         grid-template-columns: 1fr;
       }
 
+      .demo-container h2 {
+        font-size: 28px;
+      }
+
+      .floating-wa {
+        right: 12px;
+        bottom: 12px;
+        padding: 13px 17px;
+        font-size: 13px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
       .header-container {
-        flex-wrap: wrap;
+        padding: 12px 14px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .btn-header-wa {
+        font-size: 11px;
+        padding: 8px 11px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-image img {
+        width: 230px;
+        height: 230px;
+      }
+
+      .product-image-wrap {
+        height: 200px;
+      }
+
+      .floating-wa {
+        left: 12px;
+        right: 12px;
+        text-align: center;
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -492,13 +962,13 @@
 
 
   <!-- =========================
-       TOPO
+       BARRA SUPERIOR
   ========================== -->
 
   <div class="topbar">
 
-    🍦 Site demonstrativo desenvolvido pela
-    <strong>IG Sites</strong>
+    🍦 Peça pelo WhatsApp:
+    <strong>(41) 99522-9213</strong>
 
   </div>
 
@@ -513,7 +983,7 @@
 
       <a href="#home" class="logo">
 
-        🍧 SORVETERIA DEMO
+        🍦 SORVETERIA DEMO
 
       </a>
 
@@ -521,11 +991,15 @@
       <nav class="nav-links">
 
         <a href="#home">
-          Home
+          Início
         </a>
 
         <a href="#cardapio">
           Cardápio
+        </a>
+
+        <a href="#sobre">
+          Sobre
         </a>
 
         <a href="#contato">
@@ -552,7 +1026,7 @@
 
 
   <!-- =========================
-       HERO
+       CAPA
   ========================== -->
 
   <section
@@ -565,28 +1039,30 @@
 
       <div class="hero-content">
 
+
         <span class="hero-tag">
 
-          🚀 Demonstração de site
+          🍦 Sorveteria • Sabores especiais
 
         </span>
 
 
         <h1 class="hero-title">
 
-          Escolha seu sabor favorito e
-          conheça este exemplo de site
-          para <span>WhatsApp</span>!
+          O sabor que combina com o seu momento.
+          Peça pelo
+          <span>WhatsApp!</span>
 
         </h1>
 
 
         <p class="hero-subtitle">
 
-          Um exemplo de site moderno para
-          apresentar produtos, cardápio,
-          informações e contato de forma
-          profissional e fácil de usar.
+          Descubra nossos sorvetes, picolés,
+          milk-shakes e sobremesas.
+          Escolha seu sabor favorito e faça seu
+          pedido de forma rápida e fácil pelo
+          WhatsApp.
 
         </p>
 
@@ -600,14 +1076,15 @@
 
         </a>
 
+
       </div>
 
 
       <div class="hero-image">
 
         <img
-          src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80"
-          alt="Sorvete"
+          src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Sorvetes e sobremesas"
         >
 
       </div>
@@ -627,19 +1104,20 @@
     class="menu-section"
   >
 
+
     <div class="section-header">
 
       <h2 class="section-title">
 
-        Cardápio Demonstrativo
+        Nosso Cardápio
 
       </h2>
 
 
       <p class="section-desc">
 
-        Clique em qualquer botão para
-        conhecer o contato da IG Sites.
+        Escolha seu sabor favorito e peça
+        diretamente pelo WhatsApp.
 
       </p>
 
@@ -656,8 +1134,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
-            alt="Gelato Ninho com Nutella"
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=800&q=80"
+            alt="Gelato de leite Ninho com chocolate"
           >
 
           <span class="product-price">
@@ -672,13 +1150,18 @@
           <div>
 
             <h3 class="product-title">
-              1. Pote Gelato Ninho com Nutella (1L)
+
+              1. Gelato Ninho com Chocolate
+
             </h3>
 
+
             <p class="product-desc">
-              Cremoso gelato sabor leite Ninho
-              mesclado com generosas camadas
-              de Nutella.
+
+              Gelato cremoso de leite Ninho
+              com uma deliciosa cobertura
+              de chocolate.
+
             </p>
 
           </div>
@@ -707,8 +1190,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80"
-            alt="Sorvete de Pistache"
+            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=800&q=80"
+            alt="Sorvete de pistache"
           >
 
           <span class="product-price">
@@ -723,12 +1206,17 @@
           <div>
 
             <h3 class="product-title">
-              2. Pote Sorvete Pistache Premium (1L)
+
+              2. Pistache Premium
+
             </h3>
 
+
             <p class="product-desc">
-              Elaborado com pasta de pistache
-              e pedaços crocantes de pistache.
+
+              Sorvete cremoso de pistache
+              com pedaços crocantes.
+
             </p>
 
           </div>
@@ -757,8 +1245,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
-            alt="Sorvete de Morango"
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
+            alt="Sorvete de morango"
           >
 
           <span class="product-price">
@@ -773,12 +1261,17 @@
           <div>
 
             <h3 class="product-title">
-              3. Sorvete Morango com Leite Condensado (2L)
+
+              3. Morango com Leite Condensado
+
             </h3>
 
+
             <p class="product-desc">
-              Sorvete tradicional de morango
-              com calda cremosa de leite condensado.
+
+              Sorvete de morango com
+              calda cremosa de leite condensado.
+
             </p>
 
           </div>
@@ -807,8 +1300,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=600&q=80"
-            alt="Picolé Gourmet"
+            src="https://images.unsplash.com/photo-1567206563064-6f60f4078b57?auto=format&fit=crop&w=800&q=80"
+            alt="Picolé gourmet"
           >
 
           <span class="product-price">
@@ -823,12 +1316,17 @@
           <div>
 
             <h3 class="product-title">
-              4. Picolé Gourmet Brownie & Doce de Leite
+
+              4. Picolé Gourmet
+
             </h3>
 
+
             <p class="product-desc">
-              Picolé cremoso recheado com
-              brownie e doce de leite.
+
+              Picolé cremoso com cobertura
+              especial e recheio delicioso.
+
             </p>
 
           </div>
@@ -857,8 +1355,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=600&q=80"
-            alt="Paleta Mexicana"
+            src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=800&q=80"
+            alt="Paleta de maracujá"
           >
 
           <span class="product-price">
@@ -873,12 +1371,17 @@
           <div>
 
             <h3 class="product-title">
-              5. Paleta Mexicana Maracujá com Leite Condensado
+
+              5. Paleta de Maracujá
+
             </h3>
 
+
             <p class="product-desc">
-              Maracujá refrescante com recheio
-              cremoso de leite condensado.
+
+              Paleta refrescante de maracujá
+              com recheio cremoso.
+
             </p>
 
           </div>
@@ -907,8 +1410,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80"
-            alt="Sorvete de Chocolate"
+            src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=800&q=80"
+            alt="Sorvete de chocolate"
           >
 
           <span class="product-price">
@@ -923,12 +1426,17 @@
           <div>
 
             <h3 class="product-title">
-              6. Sorvete Zero Açúcar - Chocolate Belga
+
+              6. Chocolate Belga
+
             </h3>
 
+
             <p class="product-desc">
-              Sabor intenso de chocolate
-              sem adição de açúcar.
+
+              Chocolate intenso e cremoso
+              para quem ama sabores marcantes.
+
             </p>
 
           </div>
@@ -957,8 +1465,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=600&q=80"
-            alt="Sorvete de Coco com Açaí"
+            src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=800&q=80"
+            alt="Sorvete de coco com açaí"
           >
 
           <span class="product-price">
@@ -973,12 +1481,17 @@
           <div>
 
             <h3 class="product-title">
-              7. Sorvete Vegano de Coco com Açaí
+
+              7. Coco com Açaí
+
             </h3>
 
+
             <p class="product-desc">
-              Base de leite de coco com
-              açaí e sem lactose.
+
+              Combinação refrescante de
+              coco cremoso com açaí.
+
             </p>
 
           </div>
@@ -1007,8 +1520,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
-            alt="Milkshake Ovomaltine"
+            src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
+            alt="Milk-shake de chocolate"
           >
 
           <span class="product-price">
@@ -1023,12 +1536,17 @@
           <div>
 
             <h3 class="product-title">
-              8. Milkshake Ovomaltine (500ml)
+
+              8. Milk-shake Cremoso
+
             </h3>
 
+
             <p class="product-desc">
-              Milkshake cremoso preparado
-              na hora com Ovomaltine.
+
+              Milk-shake preparado na hora,
+              cremoso e cheio de sabor.
+
             </p>
 
           </div>
@@ -1057,8 +1575,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
-            alt="Sundae"
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
+            alt="Sundae de doce de leite"
           >
 
           <span class="product-price">
@@ -1073,12 +1591,17 @@
           <div>
 
             <h3 class="product-title">
-              9. Sundae Doce de Leite com Macadâmia
+
+              9. Sundae Especial
+
             </h3>
 
+
             <p class="product-desc">
-              Taça com sorvete, doce de leite
-              e macadâmia caramelizada.
+
+              Sorvete cremoso acompanhado
+              de calda e complementos especiais.
+
             </p>
 
           </div>
@@ -1107,8 +1630,8 @@
         <div class="product-image-wrap">
 
           <img
-            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
-            alt="Caixa de Picolés"
+            src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=800&q=80"
+            alt="Caixa de picolés variados"
           >
 
           <span class="product-price">
@@ -1123,12 +1646,17 @@
           <div>
 
             <h3 class="product-title">
-              10. Caixa Família Picolés Variados
+
+              10. Caixa de Picolés Variados
+
             </h3>
 
+
             <p class="product-desc">
-              Seleção especial de picolés
-              para toda a família.
+
+              Seleção de picolés variados
+              para compartilhar com toda a família.
+
             </p>
 
           </div>
@@ -1156,77 +1684,43 @@
 
 
   <!-- =========================
-       CTA FINAL
+       SOBRE / DEMONSTRAÇÃO
   ========================== -->
 
   <section
-    id="contato"
-    class="franchise-section"
+    id="sobre"
+    class="demo-section"
   >
 
-    <div class="franchise-container">
+    <div class="demo-container">
+
+      <h2>
+
+        Tenha um site assim para sua sorveteria
+
+      </h2>
 
 
-      <div class="franchise-info">
+      <p>
 
-        <h2>
+        Este é um site demonstrativo criado para
+        mostrar como uma sorveteria pode apresentar
+        seus produtos, cardápio, informações e
+        atendimento de forma profissional.
 
-          Gostou deste site?
-
-        </h2>
-
-
-        <p>
-
-          A IG Sites cria sites personalizados
-          para empresas, com visual profissional,
-          versão para celular e botão direto
-          para WhatsApp.
-
-        </p>
+      </p>
 
 
-        <ul class="franchise-list">
+      <a
+        href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="demo-button"
+      >
 
-          <li>
-            ✔ Site profissional
-          </li>
+        💬 Quero um site como este
 
-          <li>
-            ✔ Design responsivo para celular
-          </li>
-
-          <li>
-            ✔ Botão direto para WhatsApp
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="franchise-form">
-
-        <h3>
-
-          Quero um site como este
-
-        </h3>
-
-
-        <a
-          href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-submit"
-        >
-
-          💬 Falar com a IG Sites
-
-        </a>
-
-      </div>
-
+      </a>
 
     </div>
 
@@ -1237,7 +1731,10 @@
        RODAPÉ
   ========================== -->
 
-  <footer class="footer">
+  <footer
+    id="contato"
+    class="footer"
+  >
 
     <div class="footer-container">
 
@@ -1246,29 +1743,9 @@
 
         <div class="footer-logo">
 
-          🍧 SORVETERIA DEMO
+          🍦 Sorveteria Demo
 
         </div>
-
-
-        <p>
-
-          Um exemplo de site moderno para
-          apresentar produtos, informações
-          e contato de forma profissional.
-
-        </p>
-
-      </div>
-
-
-      <div class="footer-col">
-
-        <h4>
-
-          Sobre o projeto
-
-        </h4>
 
 
         <p>
@@ -1285,12 +1762,48 @@
 
         <h4>
 
-          Contato
+          Atendimento
 
         </h4>
 
 
         <p>
+
+          <strong>
+            WhatsApp:
+          </strong>
+
+          (41) 99522-9213
+
+        </p>
+
+
+        <p>
+
+          Atendimento pelo WhatsApp
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+
+          IG Sites
+
+        </h4>
+
+
+        <p>
+
+          UM SITE COM A CARA DO SEU NEGÓCIO
+
+        </p>
+
+
+        <p style="margin-top: 10px;">
 
           <a
             href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
@@ -1312,13 +1825,30 @@
 
     <div class="footer-bottom">
 
-      © 2026 — IG Sites |
-      UM SITE COM A CARA DO SEU NEGÓCIO
+      © 2026 IG Sites.
+      Site demonstrativo.
 
     </div>
 
   </footer>
 
 
+  <!-- =========================
+       BOTÃO WHATSAPP
+  ========================== -->
+
+  <a
+    href="https://wa.me/5541995229213?text=Ol%C3%A1%21%20Vi%20este%20site%20demonstrativo%20e%20quero%20um%20site%20como%20este."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-wa"
+  >
+
+    💬 Quero um site como este
+
+  </a>
+
+
 </body>
+
 </html>
